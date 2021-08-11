@@ -12,8 +12,7 @@ class ActivitiesController < ApplicationController
 end
   
 
-  
-
+#
  
 
   
