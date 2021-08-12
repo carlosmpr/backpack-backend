@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login'
   post '/me', to: 'users#me'
   post '/activity/detail', to: 'activities#details'
+  post '/accept_friend', to: 'firend_requests#add_friend'
  
 end

@@ -4,7 +4,7 @@ class CreateUserActivities < ActiveRecord::Migration[6.1]
       t.integer  :user_id
       t.integer  :activity_id
       t.string :date
-
+      t.integer :title
       t.timestamps
     end
   end
