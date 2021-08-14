@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
     user = User.validateUser(token)
     if user
       activity = Activity.find_by(id:params[:activity_id])
-    render json: activity, serializer:ActivityDetailSerializer
+      render json: activity, serializer:ActivityDetailSerializer
     else
       render json: {msg:"Unauthorized"}
   end

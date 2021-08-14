@@ -2,6 +2,18 @@
 require 'jwt'
 class UsersController < ApplicationController
 
+  def index
+    token  = request.headers['Authorization']
+    user = User.validateUser(token)
+    if user 
+      users = User.all
+      filter_users = users.select{|item| item.id != user["id"]}
+      render json: filter_users, status: :ok
+    else
+      render json: {msg:"Unauthorized"}, status: :bad_request
+  end 
+end
+
   def me
     user  = User.validateUser(params[:token])
     if user
@@ -9,6 +21,36 @@ class UsersController < ApplicationController
     else
       render json: {msg:"bad request"}, status: :bad_request
   end
+  
+end
+
+
+
+
+def my_activities
+  token  = request.headers['Authorization']
+  user = User.validateUser(token)
+ 
+  if user
+  
+  render json: user.user_activities
+  else
+    render json: {msg:"bad request"}, status: :bad_request
+end
+end
+
+
+
+def my_friends
+  token  = request.headers['Authorization']
+  user = User.validateUser(token)
+ 
+  if user
+    find_friends =  user.user_friends.map{|friend| User.find(friend.friend_id)}
+  render json: find_friends
+  else
+    render json: {msg:"bad request"}, status: :bad_request
+end
 end
 
 

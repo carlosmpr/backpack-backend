@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post '/login', to: 'users#login'
   post '/me', to: 'users#me'
+  get '/my_activities', to: 'users#my_activities'
+  get '/my_friends', to: 'users#my_friends'
   post '/activity/detail', to: 'activities#details'
   post '/accept_friend', to: 'firend_requests#add_friend'
  
