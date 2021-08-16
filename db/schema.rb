@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_154656) do
   create_table "firend_requests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "user_invite_id"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_154656) do
   create_table "friends_goings", force: :cascade do |t|
     t.integer "user_activity_id"
     t.integer "user_friend_id"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -60,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_154656) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.string "country"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_154656) do
     t.integer "user_id"
     t.integer "activity_id"
     t.string "date"
+    t.integer "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -101,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_154656) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
+    t.string "image"
     t.string "password_digest"
     t.boolean "swimming"
     t.boolean "hiking"
