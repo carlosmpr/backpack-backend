@@ -11,6 +11,8 @@ Location.create(name:"New York" , country:'USA')
 Location.create(name:"Miami" , country:'USA')
 Location.create(name:"Mexico" , country:'MX')
 Location.create(name:"Cabarete", country:'DR')
+Location.create(name:"Bahamas", country:'Bahamas')
+Location.create(name:"Italy", country:'Italy')
 ###############New York
 Activity.create(location_id:1, name:"Cascade Mountain", description:'Cascade Mountain and Porter Mountain are two of the more moderate peaks, making them readily accessible to hikers of various abilities. Taking the 5.5-mile Cascade Mountain Trail allows you to enjoy both of these peaks, panoramic views, a flowing river, some easy rock scrambles, and even a waterfall.', category:'hiking', state:"Lake Placid", directions:'Keene, Nueva York 12942')
 Activity.create(location_id:1, name:"Devil’s Hole Trail", description:'The Devil’s Hole Trail runs along the river with amazing views of steep Niagara Gorge, bubbling white water rapids, and the Devil’s Hole itself, an impressively large whirlpool that can become mesmerizing to watch', category:'hiking', state:"Niagara Falls", directions:'Niagara Scenic Pkwy, Niagara Falls, NY 14305')
@@ -79,6 +81,40 @@ Activity.create(location_id:4, name:"Punta Rucia", description:"his small fishin
 Activity.create(location_id:4, name:"Playa Grande", description:"Huge waves often roll in here, but calm days do exist, and the section closest to the parking area is somewhat sheltered by a headland", category:'swimming', state:"Rio San Juan", directions:'Rio San Juan')
 Activity.create(location_id:4, name:"Bahia de Las Aguilas", description:" Located near the town of Pedernales on the Caribbean coast, not far from the border with Haiti, this glorious eight-kilometer", category:'swimming', state:"Pedernales", directions:'Pedernales')
 Activity.create(location_id:4, name:"Playa Fronton", description:"Accessible only by boat or a four-hour round-trip guided hike, Playa Fronton is a completely undeveloped beach.", category:'swimming', state:"Rio San Juan", directions:'Rio San Juan')
+
+
+
+Activity.create(location_id:4, name:"Samana Camping", description:"The calm Caribbean waters are perfect for swimming or wading, and the water color is a typical Caribbean turquoise hue that stretches", category:'camping', state:"Samana", directions:'Las Terrenas 32000, Dominican Republic')
+Activity.create(location_id:4, name:"Camping surf Bahoruco", description:"The calm Caribbean waters are perfect for swimming or wading, and the water color is a typical Caribbean turquoise hue that stretches", category:'camping', state:"Mao", directions:'Santa Cruz de Mao')
+Activity.create(location_id:4, name:"Afuera Camping Club", description:"The calm Caribbean waters are perfect for swimming or wading, and the water color is a typical Caribbean turquoise hue that stretches", category:'camping', state:"Nagua", directions:'Nagua')
+
+
+Activity.create(location_id:4, name:"Zona Colonial", description:" this city, where Christopher Columbus first landed in the America's, you'll find the hustle and bustle of modern day life being played out against the backdrop of centuries-old buildings.", category:'touring', state:"Santo Domingo", directions:'Santo Domingo')
+Activity.create(location_id:4, name:"27 Waterfalls of Damajagua", description:"If you are looking for adventure, one of the most interesting things to do in the Dominican Republic, is to climb up a narrow gorge of waterfalls and then jump off the top of each one into the pools below.", category:'touring', state:"Damajagua", directions:'Damajagua')
+Activity.create(location_id:4, name:"Altos de Chavon", description:"La Romana is one of the Dominican's resort destinations. This area has a number of large resorts, some of which are geared towards more independent travelers looking to self-cater.", category:'touring', state:"La Romana", directions:'La Romana')
+Activity.create(location_id:4, name:"Cable car", description:"Ascending nearly 800 meters from the steamy heat of sea level, the cable car whisks you up to the top of Pico Isabel de Torres where you'll find the air pleasantly cool.", category:'touring', state:"Puerto Plata", directions:'Puerto Plata')
+Activity.create(location_id:4, name:"Los Pozos", description:"They are a series of beautiful natural pools formed from underwater/open-air caves", category:'touring', state:"Puerto Plata", directions:'Puerto Plata')
+Activity.create(location_id:4, name:"Bani: Sand Dunes", description:"Unique tall sand dunes adjacent to a beach. You can try sandboarding", category:'touring', state:"Puerto Plata", directions:'Puerto Plata')
+Activity.create(location_id:4, name:"Samana’s Limon Waterfall ", description:"Although the Samana province is popular with tourists, there are still many places that are still well worth the visit to this area especially", category:'touring', state:"Puerto Plata", directions:'Puerto Plata')
+
+
+Activity.create(location_id:4, name:"LA YOLA RESTAURANT", description:"Situated on stilts above the water to mimic the experience of being on a “yola” or small fishing boat, La Yola Restaurant offers diners a chance to have an elegant meal with an unmatched ocean view.", category:'eating', state:"Punta Cana", directions:'Punta Cana')
+Activity.create(location_id:4, name:"EL MESÓN DE LA CAVA", description:"Tucked away in a natural, limestone cave that was carved out by waves, El Mesón de la Cava is one of the most well-renowned restaurants in the Dominican Republic.", category:'eating', state:"Santo Domingo", directions:'Santo Domingo')
+Activity.create(location_id:4, name:"LA PALAPA BY EDEN ROC", description:"For a memorable dining experience that includes a breathtaking view of the Caribbean Sea", category:'eating', state:"Punta Cana", directions:'Punta Cana')
+Activity.create(location_id:4, name:"LOS TRES COCOS", description:"A favourite among locals and visitors alike, Los Tres Cocos welcomes guests with a warm and welcoming atmosphere", category:'eating', state:"Puerto Plata", directions:'Puerto Plata')
+
+
+###############Bahamas
+Activity.create(location_id:5, name:"Cabbage Beach", description:"The beach stretches almost the entire length of the northern edge of Paradise Island and can be accessed through one of the many hotels along the beach, including Atlantis, Sunrise Beach Club", category:'swimming', state:"Bahamas", directions:'Bahamas')
+Activity.create(location_id:5, name:"Cabbage Beach", description:"Considered not only to be one of the best beaches in the Bahamas, but also the entire Caribbean, and at three and a half glorious miles long", category:'swimming', state:"Bahamas", directions:'Bahamas')
+Activity.create(location_id:5, name:"Tahiti Beach, Abacos", description:"he name Tahiti Beach instills images of swaying coconut palms in an exotic locale in the South Pacific. The beach on Elbow Cay with this namesake was not accidental.", category:'swimming', state:"Bahamas", directions:'Bahamas')
+Activity.create(location_id:5, name:"Pink Sands Beach", description:"Eleuthera is home to a plethora of gorgeous pink sandy beaches, and you would be hard pressed to put one upon a pedestal above another because they each offer their own striking beauty", category:'swimming', state:"Bahamas", directions:'Bahamas')
+
+###############Italy
+Activity.create(location_id:6, name:"Via Krupp", description:" While the risk of tumbling rocks means you can no longer stroll the elegant switchback bends that make up Via Krupp, that doesn’t stop the view at the top from being any less spectacular.", category:'touring', state:"Italy", directions:'Italy')
+Activity.create(location_id:6, name:"San Gimignano", description:"The hilltop town provides a relaxed antidote to the bustle of Siena and with its enchanting views", category:'touring', state:"Italy", directions:'Italy')
+Activity.create(location_id:6, name:"Praiano", description:"Delicately perched on the cliff face, equidistant from Amalfi and Positano and just a short drive from the effortless romance of Ravello, Praiano is my go-to whenever I visit this sun-drenched stretch of coastline.", category:'touring', state:"Italy", directions:'Italy')
+
 ############# UserCreate #########
 User.create(name:"Carlos", last_name:'Polanco', email:'carlos@email.com', phone:"999-999-9999", password:"carlosPass", swimming:true, hiking:true, walking:true, eating:true, touring:true , camping:true)
 User.create(name:"Jeff", last_name:'Bezos', email:'Jeff@email.com', phone:"999-999-9999", password:"jeffPass", swimming:false, hiking:true, walking:true, eating:false, touring:true , camping:true)
