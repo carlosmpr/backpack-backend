@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_002438) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
-    t.string "image"
     t.string "password_digest"
     t.boolean "swimming"
     t.boolean "hiking"

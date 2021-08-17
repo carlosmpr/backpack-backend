@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   post '/login', to: 'users#login'
-  post '/me', to: 'users#me'
+  get '/me', to: 'users#me'
   get '/my_activities', to: 'users#my_activities'
   get '/my_friends', to: 'users#my_friends'
   post '/activity/detail', to: 'activities#details'

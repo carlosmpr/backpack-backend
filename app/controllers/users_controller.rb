@@ -15,7 +15,8 @@ class UsersController < ApplicationController
 end
 
   def me
-    user  = User.validateUser(params[:token])
+    token  = request.headers['Authorization']
+    user  = User.validateUser(token)
     if user
     render json: user
     else
@@ -66,7 +67,10 @@ end
       walking: params[:walking],
       eating: params[:eating],
       touring: params[:eating],
-      camping: params[:camping])
+      camping: params[:camping],
+      featured_image: params[:featured_image]
+    )
+      
     if @user.save
       token = JWT.encode user_model(@user), hmac_secret, 'HS256'
       render json: {token: token}
@@ -115,9 +119,7 @@ end
     end
 
     #Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:name, :last_name, :email, :phone, :password_digest, :swimming, :hiking, :walking, :eating, :touring, :camping)
-    end
+   
 
     def user_model(user)
       userModel = {

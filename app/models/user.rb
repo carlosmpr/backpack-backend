@@ -5,10 +5,12 @@ class User < ApplicationRecord
     has_many :chat_rooms
     has_many :friend_requests
     has_many :user_friends
-    has_one_attached :image
+    has_one_attached :featured_image
     validates :email, presence: true
     validates :email, uniqueness: { case_sensitive: true }
 
+
+    
 
     def self.validateUser(token)
         begin

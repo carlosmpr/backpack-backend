@@ -13,7 +13,9 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-
+  config.action_mailer.default_url_options = { host: 'localhost:5000' } # for absolute urls in email
+  config.action_mailer.asset_host = "http://localhost:5000" 
+  Rails.application.routes.default_url_options[:host] = 'localhost:5000'
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
