@@ -42,3 +42,5 @@ gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'bcrypt'
 gem  'jwt'
+
+gem 'faker'

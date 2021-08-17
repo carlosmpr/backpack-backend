@@ -9,7 +9,9 @@ class User < ApplicationRecord
     validates :email, presence: true
     validates :email, uniqueness: { case_sensitive: true }
 
-
+    def self.detail 
+        self.name
+    end
     
 
     def self.validateUser(token)

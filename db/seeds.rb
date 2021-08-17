@@ -5,7 +5,7 @@
 # #
 # #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 # #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'faker'
 # #####Locations ###############
 Location.create(name:"New York" , country:'USA', image:'https://res.cloudinary.com/simpleview/image/upload/v1622206643/clients/newyorkstate/2000_x_797_web_hero_skyline_2_6b921811-cd45-42fd-990a-ba60c7fba1f0.jpg')
 Location.create(name:"Miami" , country:'USA', image:"https://www.miamiluxuryhomes.com/wp-content/uploads/2018/03/allison-island.jpg")
@@ -109,8 +109,21 @@ Activity.create(location_id:6, name:"San Gimignano",image:'https://www.wantedinr
 Activity.create(location_id:6, name:"Praiano",image:'https://urbanistagirl.com/wp-content/uploads/2018/10/IMG_6152-compressor.jpg', description:"Delicately perched on the cliff face, equidistant from Amalfi and Positano and just a short drive from the effortless romance of Ravello, Praiano is my go-to whenever I visit this sun-drenched stretch of coastline.", category:'touring', state:"Italy", directions:'Italy')
 
 ############# UserCreate #########
-User.create(name:"Carlos", last_name:'Polanco', email:'carlos@email.com', phone:"999-999-9999", password:"carlosPass", swimming:true, hiking:true, walking:true, eating:true, touring:true , camping:true)
-User.create(name:"Jeff", last_name:'Bezos', email:'Jeff@email.com', phone:"999-999-9999", password:"jeffPass", swimming:false, hiking:true, walking:true, eating:false, touring:true , camping:true)
+User.create(name:"Carlos", last_name:'Polanco',avatar: 'https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg' , email:'carlos@email.com', phone:"999-999-9999", password:"carlosPass", swimming:true, hiking:true, walking:true, eating:true, touring:true , camping:true)
+User.create(name:"Katy", last_name:'Perry',avatar:'https://i.pinimg.com/originals/f7/2b/c0/f72bc0ffa00575819e5922a4696034c5.jpg', email:'katy@email.com', phone:"111-777-4999", password:"katyPass", swimming:false, hiking:true, walking:true, eating:true, touring:true , camping:true)
+User.create(name:"Megan", last_name:'Fox',avatar:'https://i.insider.com/5ebb0b73cdfd4828f500b963?width=700', email:'megan@email.com', phone:"222-777-4999", password:"meganPass", swimming:true, hiking:true, walking:true, eating:true, touring:true , camping:true)
+User.create(name:"Angelina", last_name:'Jolie',avatar:'https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/05/scarlett-1620793869.jpg', email:'angelina@email.com', phone:"456-777-4999", password:"angelinaPass", swimming:true, hiking:true, walking:true, eating:true, touring:true , camping:true)
+User.create(name:"Jeff", last_name:'Bezos',avatar:'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5bb22ae84bbe6f67d2e82e05%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D627%26cropX2%3D1639%26cropY1%3D129%26cropY2%3D1142', email:'Jeff@email.com', phone:"999-999-9999", password:"jeffPass", swimming:false, hiking:true, walking:true, eating:false, touring:true , camping:true)
+User.create(name:"Elon", last_name:'Musk',avatar:'https://cdn.vox-cdn.com/thumbor/ydvSllfMvRWbgNy0AdKoIohZo7s=/0x0:5134x3571/1200x800/filters:focal(2157x1376:2977x2196)/cdn.vox-cdn.com/uploads/chorus_image/image/69251912/1229892421.0.jpg', email:'elon@email.com', phone:"777-999-9999", password:"elonPass", swimming:true, hiking:true, walking:true, eating:false, touring:true , camping:false)
+User.create(name:"Scarlet", last_name:'Johanson',avatar:'https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_.jpg', email:'scarlet@email.com', phone:"222-777-4999", password:"scarletPass", swimming:true, hiking:false, walking:false, eating:true, touring:true , camping:true)
+User.create(name:"Penelope", last_name:'Crus',avatar:'https://us.hola.com/images/0266-11a78d491bc3-a29b20ea3891-1000/horizontal-1200/penelope-cruz.jpg', email:'penelope@email.com', phone:"222-777-4999", password:"penelopePass", swimming:true, hiking:false, walking:false, eating:true, touring:true , camping:true)
+User.create(name:"Sandra", last_name:'Bullock',avatar:'https://www.usmagazine.com/wp-content/uploads/2020/02/Sandra-Bullock-Plans-to-Move-%E2%80%98Down-the-Street%E2%80%99-From-Her-Kids-When-They-Start-College.jpg?quality=86&strip=all', email:'sandra@email.com', phone:"222-777-4999", password:"sandraPass", swimming:true, hiking:false, walking:false, eating:true, touring:true , camping:true)
+User.create(name:"Bill", last_name:'Gates',avatar:'https://pbs.twimg.com/profile_images/1414439092373254147/JdS8yLGI_400x400.jpg', email:'bill@email.com', phone:"999-999-9666", password:"billPass", swimming:true, hiking:false, walking:true, eating:true, touring:true , camping:true)
+User.create(name:"Tony", last_name:'Stark',avatar:'https://static.wikia.nocookie.net/marvelcentral/images/9/97/Tony-Stark.jpg/revision/latest?cb=20130429010603', email:'Tony@email.com', phone:"999-777-9999", password:"TonyPass", swimming:false, hiking:true, walking:false, eating:false, touring:true , camping:true)
+User.create(name:"Bruce", last_name:'Wayne',avatar:'https://unothegateway.com/wp-content/uploads/2017/04/Bruce_Wayne.jpg', email:'wayne@email.com', phone:"999-777-4999", password:"waynePass", swimming:false, hiking:true, walking:false, eating:false, touring:true , camping:true)
+User.create(name:"Morgan", last_name:'Freeman',avatar:'https://i2.wp.com/rayhaber.com/wp-content/uploads/2020/07/morgan-freeman-kimdir.jpg?fit=1424%2C800&ssl=1', email:'morgan@email.com', phone:"986-777-4999", password:"morganPass", swimming:true, hiking:false, walking:true, eating:true, touring:true , camping:false)
+User.create(name:"Dwayne", last_name:'Jhonson',avatar:'https://resizing.flixster.com/vo9_P93JAs5Q_mMcJmz5mCRTimo=/506x652/v2/https://flxt.tmsimg.com/v9/AllPhotos/235135/235135_v9_ba.jpg', email:'dwayne@email.com', phone:"111-777-4999", password:"dwaynePass", swimming:true, hiking:true, walking:true, eating:false, touring:true , camping:true)
+
 
 
 # #####UserActivities
@@ -121,11 +134,63 @@ UserActivity.create(user_id:2, activity_id:4 , date:'7/4/2022')
 
 
 ###############ActivityReview
-ActivityReview.create(activity_id:1,  user_id:1, comment:'Amazing place')
-ActivityReview.create(activity_id:2,  user_id:1, comment:'Incredible place')
+for i in (0..54)
+    ActivityReview.create(activity_id:i,  user_id:1, comment:Faker::Quote.famous_last_words)
+end
+for i in (0..54)
+    ActivityReview.create(activity_id:i,  user_id:2, comment:Faker::Quote.famous_last_words)
+end
+for i in (0..54)
+    ActivityReview.create(activity_id:i,  user_id:3, comment:Faker::Quote.famous_last_words)
+end
+for i in (0..54)
+    ActivityReview.create(activity_id:i,  user_id:4, comment:Faker::Quote.famous_last_words)
+end
 
 
+for i in (20..54)
+    ActivityReview.create(activity_id:i,  user_id:5, comment:Faker::Quote.famous_last_words)
+end
 
+for i in (20..54)
+    ActivityReview.create(activity_id:i,  user_id:6, comment:Faker::Quote.famous_last_words)
+end
+
+for i in (20..54)
+    ActivityReview.create(activity_id:i,  user_id:7, comment:Faker::Quote.famous_last_words)
+end
+
+
+for i in (30..54)
+    ActivityReview.create(activity_id:i,  user_id:8, comment:Faker::Quote.famous_last_words)
+end
+
+for i in (30..54)
+    ActivityReview.create(activity_id:i,  user_id:9, comment:Faker::Quote.famous_last_words)
+end
+
+for i in (30..54)
+    ActivityReview.create(activity_id:i,  user_id:10, comment:Faker::Quote.famous_last_words)
+end
+
+
+for i in (0..10)
+    ActivityReview.create(activity_id:i,  user_id:11, comment:Faker::Quote.famous_last_words)
+end
+
+
+for i in (0..10)
+    ActivityReview.create(activity_id:i,  user_id:12, comment:Faker::Quote.famous_last_words)
+end
+
+
+for i in (0..10)
+    ActivityReview.create(activity_id:i,  user_id:13, comment:Faker::Quote.famous_last_words)
+end
+
+for i in (0..10)
+    ActivityReview.create(activity_id:i,  user_id:14, comment:Faker::Quote.famous_last_words)
+end
 ################UserFriends
 UserFriend.create(user_id:1, friend_id:2)
 UserFriend.create(user_id:2, friend_id:1)
