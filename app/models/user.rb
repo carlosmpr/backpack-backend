@@ -5,7 +5,7 @@ class User < ApplicationRecord
     has_many :chat_rooms
     has_many :friend_requests
     has_many :user_friends
-
+    has_one_attached :image
     validates :email, presence: true
     validates :email, uniqueness: { case_sensitive: true }
 
