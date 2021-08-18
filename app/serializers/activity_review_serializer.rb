@@ -4,7 +4,7 @@ class ActivityReviewSerializer < ActiveModel::Serializer
   def user
   image =  if object.user.featured_image.attached?
       {
-        url: rails_blob_url(object.featured_image)
+        url: rails_blob_url(object.user.featured_image)
       } else 
         ""
      end
