@@ -12,6 +12,31 @@ class User < ApplicationRecord
     def self.detail 
         self.name
     end
+
+
+
+    def user
+        image =  if self.featured_image.attached?
+            {
+              url: rails_blob_url(self.featured_image)
+            } else 
+              ""
+           end
+           
+         {
+            id: self.id,
+           name: self.name,
+           last_name: self.last_name,
+           avatar: self.avatar,
+           featured_image: image,
+           hiking: self.hiking,
+           walking: self.walking,
+           eating: self.eating,
+           camping: self.camping,
+           touring: self.touring,
+           swimming: self.swimming
+         }
+        end
     
 
     def self.validateUser(token)
