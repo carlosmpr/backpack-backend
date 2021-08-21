@@ -5,12 +5,18 @@ class FriendsGoingsController < ApplicationController
   def create
     token  = request.headers['Authorization']
     user = User.validateUser(token)
+ 
     if user
-      @friends_going = FriendsGoing.new(friends_going_params)
-      if @friends_going.save
-        render json: @friends_going, status: :created
+      already_invited = FriendsGoing.find_by(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id] )
+      if already_invited
+        render json: {msg: 'User already invited'}, status: :ok
       else
-        render json: @friends_going.errors, status: :unprocessable_entity
+        @friends_going = FriendsGoing.new(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id], status:params[:status] ) 
+        if @friends_going.save
+          render json: {msg:"Invitation send"}, status: :created
+        else
+          render json: @friends_going.errors, status: :unprocessable_entity
+        end
       end
     else
       render json: {msg:'Unathorized'}, status: :bad_request
@@ -41,6 +47,6 @@ class FriendsGoingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def friends_going_params
-      params.require(:friends_going).permit(:user_activity_id, :user_friend_id)
+      params.require(:friends_going).permit(:user_activity_id, :user_friend_id, :status)
     end
 end

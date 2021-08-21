@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end 
 end
 
+
   def me
     token  = request.headers['Authorization']
     user  = User.validateUser(token)
@@ -22,19 +23,26 @@ end
     else
       render json: {msg:"bad request"}, status: :bad_request
   end
-  
 end
-
-
 
 
 def my_activities
   token  = request.headers['Authorization']
   user = User.validateUser(token)
- 
   if user
-  
   render json: user.user_activities
+  else
+    render json: {msg:"bad request"}, status: :bad_request
+end
+end
+
+
+def friends_goings
+  token  = request.headers['Authorization']
+  user = User.validateUser(token)
+  if user
+  findActivity = UserActivity.find(params[:id])
+  render json: findActivity.friends_goings, status: :ok
   else
     render json: {msg:"bad request"}, status: :bad_request
 end
@@ -45,9 +53,8 @@ end
 def my_friends
   token  = request.headers['Authorization']
   user = User.validateUser(token)
- 
   if user
-    find_friends =  user.user_friends.map{|friend| User.find(friend.friend_id)}
+    find_friends =  user.user_friends.map{|friend| {user:User.find(friend.friend_id), user_friend_id: friend.id}}
   render json: find_friends
   else
     render json: {msg:"bad request"}, status: :bad_request

@@ -34,7 +34,9 @@ class User < ApplicationRecord
            eating: self.eating,
            camping: self.camping,
            touring: self.touring,
-           swimming: self.swimming
+           swimming: self.swimming,
+           phone: self.phone,
+           email: self.email
          }
         end
     
