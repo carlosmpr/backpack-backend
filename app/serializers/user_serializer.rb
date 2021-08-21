@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :name, :last_name, :email, :phone, :swimming, :hiking, :walking, :eating, :touring, :camping,:featured_image, :avatar, :friend_request 
+  attributes :id, :name, :last_name, :email, :phone, :swimming, :hiking, :walking, :eating, :touring, :camping,:featured_image, :avatar, :friend_request , :activity_invitation
 
   def featured_image
     if object.featured_image.attached?
@@ -18,5 +18,17 @@ class UserSerializer < ActiveModel::Serializer
     userdata =User.find_by(id: user[:user_id])
     {id: user.id , users:userdata.user}
    end
+  end
+
+
+  def activity_invitation
+    invitations = FriendsGoing.where(friend_id:object.id)
+    activities = invitations.map do |invited| 
+      activity =UserActivity.find(invited.user_activity_id)
+      findActivity =Activity.find( activity.activity_id)
+      user = User.find(activity.user_id)
+      {date: activity.date , detail:findActivity, user:user, invitaion_id: invited.id }
+    end
+    activities
   end
 end

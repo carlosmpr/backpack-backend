@@ -7,11 +7,12 @@ class FriendsGoingsController < ApplicationController
     user = User.validateUser(token)
  
     if user
+      friend = UserFriend.find(params[:user_friend_id])
       already_invited = FriendsGoing.find_by(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id] )
       if already_invited
         render json: {msg: 'User already invited'}, status: :ok
       else
-        @friends_going = FriendsGoing.new(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id], status:params[:status] ) 
+        @friends_going = FriendsGoing.new(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id], status:params[:status],friend_id:friend.friend_id ) 
         if @friends_going.save
           render json: {msg:"Invitation send"}, status: :created
         else

@@ -41,12 +41,25 @@ def friends_goings
   token  = request.headers['Authorization']
   user = User.validateUser(token)
   if user
-  findActivity = UserActivity.find(params[:id])
-  render json: findActivity.friends_goings, status: :ok
+    findActivity = UserActivity.find(params[:id])
+    render json: findActivity.friends_goings, status: :ok
   else
     render json: {msg:"bad request"}, status: :bad_request
+  end
 end
+
+
+def my_invitations
+  token  = request.headers['Authorization']
+  user = User.validateUser(token)
+  if user
+    findActivities = UserActivity.first.friends_goings.where(user_friend_id: user.id)
+    render json: findActivities.friends_goings, status: :ok
+  else
+    render json: {msg:"bad request"}, status: :bad_request
+  end
 end
+
 
 
 

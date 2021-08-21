@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2021_08_17_002438) do
     t.integer "user_activity_id"
     t.integer "user_friend_id"
     t.string "status"
+    t.integer "friend_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
