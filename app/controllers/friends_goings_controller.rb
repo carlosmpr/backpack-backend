@@ -5,7 +5,6 @@ class FriendsGoingsController < ApplicationController
   def create
     token  = request.headers['Authorization']
     user = User.validateUser(token)
- 
     if user
       friend = UserFriend.find(params[:user_friend_id])
       already_invited = FriendsGoing.find_by(user_activity_id: params[:user_activity_id], user_friend_id: params[:user_friend_id] )
@@ -23,6 +22,21 @@ class FriendsGoingsController < ApplicationController
       render json: {msg:'Unathorized'}, status: :bad_request
     end
   end
+
+
+  def going
+    token  = request.headers['Authorization']
+    user = User.validateUser(token)
+    if user
+      invitation = FriendsGoing.find_by(id:params[:invitaion_id])
+      invitation.status = params[:status]
+      invitation.save
+      render json: invitation, status: :ok
+    else
+      render json: {msg:'Unathorized'}, status: :bad_request
+    end
+  end
+
 
   
 

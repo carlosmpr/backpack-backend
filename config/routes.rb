@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/my_activities', to: 'users#my_activities'
   get '/my_friends_goings/:id', to: 'users#friends_goings'
   get '/my_friends', to: 'users#my_friends'
+  post '/invitation_response', to: 'friends_goings#going'
   post '/activity/detail', to: 'activities#details'
   post '/accept_friend', to: 'firend_requests#add_friend'
  
