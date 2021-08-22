@@ -31,7 +31,8 @@ class FriendsGoingsController < ApplicationController
       invitation = FriendsGoing.find_by(id:params[:invitaion_id])
       invitation.status = params[:status]
       invitation.save
-      render json: invitation, status: :ok
+      @user = User.find(user.id)
+      render json: @user, status: :ok
     else
       render json: {msg:'Unathorized'}, status: :bad_request
     end
