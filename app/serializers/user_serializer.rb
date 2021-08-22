@@ -27,7 +27,7 @@ class UserSerializer < ActiveModel::Serializer
       activity =UserActivity.find(invited.user_activity_id)
       findActivity =Activity.find( activity.activity_id)
       user = User.find(activity.user_id)
-      {date: activity.date , detail:findActivity, user:user, invitaion_id: invited.id , status: invited.status}
+      {date: activity.date , detail:findActivity, user:user, invitaion_id: invited.id , status: invited.status, join_activity: activity.id}
     end
     activities
   end
