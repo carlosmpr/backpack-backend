@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   post '/invitation_response', to: 'friends_goings#going'
   post '/activity/detail', to: 'activities#details'
   post '/accept_friend', to: 'firend_requests#add_friend'
- 
+  mount ActionCable.server => "/cable"
 end

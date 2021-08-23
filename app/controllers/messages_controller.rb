@@ -15,10 +15,12 @@ class MessagesController < ApplicationController
 
   # POST /messages
   def create
-    @message = Message.new(message_params)
-
+    @message = Message.new(chat_room_id:params[:chat_room_id], user_id:params[:user_id], message:params[:message])
     if @message.save
-      render json: @message, status: :created, location: @message
+      @chat_room = ChatRoom.find(params[:chat_room_id])
+      ActionCable.server.broadcast(@chat_room.id, @message.to_json)
+ 
+      render json: @message, status: :created
     else
       render json: @message.errors, status: :unprocessable_entity
     end

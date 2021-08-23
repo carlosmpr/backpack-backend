@@ -15,14 +15,29 @@ class ChatRoomsController < ApplicationController
 
   # POST /chat_rooms
   def create
-    @chat_room = ChatRoom.new(chat_room_params)
-
-    if @chat_room.save
-      render json: @chat_room, status: :created, location: @chat_room
+    token  = request.headers['Authorization']
+    user = User.validateUser(token)
+  
+    if user
+      chat_room = ChatRoom.find_by(user_id:user.id, user_id2:params[:user_id2])
+      friend_chat = ChatRoom.find_by(user_id:params[:user_id2], user_id2:user.id)
+      if chat_room
+        render json: chat_room
+      elsif friend_chat
+        render json: friend_chat
+      else
+        @chat_room = ChatRoom.new(user_id: user.id, user_id2:params[:user_id2])
+        if @chat_room.save
+          render json: @chat_room, status: :created, location: @chat_room
+        else
+          render json: @chat_room.errors, status: :unprocessable_entity
+        end
+      end
     else
-      render json: @chat_room.errors, status: :unprocessable_entity
+      render json: {msg:"Unauthorized"}, status: :bad_request
     end
   end
+
 
   # PATCH/PUT /chat_rooms/1
   def update

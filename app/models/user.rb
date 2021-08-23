@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :user_activities
     has_many :activities, through: :user_activities
     has_many :chat_rooms
+    has_many :messages
     has_many :friend_requests
     has_many :user_friends
     has_one_attached :featured_image

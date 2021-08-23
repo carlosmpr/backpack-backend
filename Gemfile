@@ -44,3 +44,7 @@ gem 'bcrypt'
 gem  'jwt'
 
 gem 'faker'
+
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
