@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :name, :last_name, :email, :phone, :swimming, :hiking, :walking, :eating, :touring, :camping,:featured_image, :avatar, :friend_request , :activity_invitation
+  attributes :id, :name, :last_name, :email, :phone, :swimming, :hiking, :walking, :eating, :touring, :camping,:featured_image, :avatar, :friend_request , :activity_invitation, :friends, :activities
 
   def featured_image
     if object.featured_image.attached?
@@ -10,6 +10,15 @@ class UserSerializer < ActiveModel::Serializer
     end
   end
 
+
+  def friends
+    object.user_friends.count
+  end
+
+
+  def activities
+    object.user_activities.count
+  end
 
 
   def friend_request
