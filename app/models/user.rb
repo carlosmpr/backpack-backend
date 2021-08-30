@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    include Rails.application.routes.url_helpers
     has_secure_password
     has_many :user_activities
     has_many :activities, through: :user_activities

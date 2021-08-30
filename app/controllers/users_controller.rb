@@ -67,7 +67,7 @@ def my_friends
   token  = request.headers['Authorization']
   user = User.validateUser(token)
   if user
-    find_friends =  user.user_friends.map{|friend| {user:User.find(friend.friend_id), user_friend_id: friend.id}}
+    find_friends =  user.user_friends.map{|friend| {user:User.find(friend.friend_id).user, user_friend_id: friend.id}}
   render json: find_friends
   else
     render json: {msg:"bad request"}, status: :bad_request
